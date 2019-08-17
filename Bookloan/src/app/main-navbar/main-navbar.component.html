@@ -1,0 +1,29 @@
+<header class="navbar-dark bg-dark">
+    <nav class="container navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index">Livraria MGG</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir ou fechar menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li ngbDropdown class="nav-item dropdown show">
+                        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="menuClient" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" href="#">Livros</a>
+                        <div ngbDropdownMenu class="dropdown-menu show" aria-labelledby="menuClient">
+                            <a class="dropdown-item" href="book">Consultar</a>
+                            <a class="dropdown-item" href="book">Adicionar</a>
+                        </div>
+                    </li>
+                <li ngbDropdown class="nav-item dropdown show">
+                    <a ngbDropdownToggle class="nav-link dropdown-toggle" id="menuClient" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" href="#">Clientes</a>
+                    <div ngbDropdownMenu class="dropdown-menu show" aria-labelledby="menuClient">
+                        <a class="dropdown-item" href="client">Consultar</a>
+                        <a class="dropdown-item" href="client">Adicionar</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
