@@ -8,9 +8,9 @@ import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IndexComponent } from './pages/index/index.component';
 import { ClientComponent } from './pages/client/client.component';
-import { BookComponent } from './pages/book/book.component';
-import { BookService } from './pages/book/book.service';
-import { BookAddComponent } from './books/book/book-add/book-add.component'
+import { BookComponent } from './pages/books/book/book.component';
+import { BookService } from './pages/books/book/book.service';
+import { BookAddComponent } from './pages/books/book-add/book-add.component';
 
 @NgModule({
   declarations: [
