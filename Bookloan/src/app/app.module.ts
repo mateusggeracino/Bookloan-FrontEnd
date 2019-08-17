@@ -9,7 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IndexComponent } from './pages/index/index.component';
 import { ClientComponent } from './pages/client/client.component';
 import { BookComponent } from './pages/book/book.component';
-import { BookService } from './pages/book/book.service'
+import { BookService } from './pages/book/book.service';
+import { BookAddComponent } from './books/book/book-add/book-add.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BookService } from './pages/book/book.service'
     MainNavbarComponent,
     IndexComponent,
     ClientComponent,
-    BookComponent
+    BookComponent,
+    BookAddComponent
   ],
   imports: [
     BrowserModule,
