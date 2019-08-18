@@ -14,6 +14,7 @@ import { BookComponent } from './pages/books/book/book.component';
 import { BookAddComponent } from './pages/books/book-add/book-add.component';
 
 import { BookService } from './pages/books/book.service';
+import { ClientAddComponent } from './pages/clients/client-add/client-add.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BookService } from './pages/books/book.service';
     IndexComponent,
     ClientComponent,
     BookComponent,
-    BookAddComponent
+    BookAddComponent,
+    ClientAddComponent
   ],
   imports: [
     BrowserModule,

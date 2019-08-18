@@ -1,5 +1,5 @@
 export class Book {
-    Key: string;
+    UniqueKey: string;
     Title: string;
     Author: string;
 }

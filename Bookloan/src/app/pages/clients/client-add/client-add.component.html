@@ -1,0 +1,51 @@
+<form (ngSubmit)="addClient()" [formGroup]="subscribeForm" class="mt-4 col-8 mx-auto">
+    <div class="form-horizontal">
+        <div class="alert alert-danger" *ngIf="errors?.length > 0">
+            <h3 id=msgReturn>Opa! Alguma coisa não deu certo: </h3>
+            <ul>
+                <li *ngFor="let error of errors">{{ error }}</li>
+            </ul>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': displayMessage.name}">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" placeholder="Nome do cliente" formControlName="name">
+            <span class="text-danger" *ngIf="displayMessage.name">
+                <p [innerHtml]="displayMessage.name"></p>
+            </span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': displayMessage.lastName}">
+            <label for="lastName">Sobrenome</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Sobrenome do cliente"
+                formControlName="lastName">
+            <span class="text-danger" *ngIf="displayMessage.lastName">
+                <p [innerHtml]="displayMessage.lastName"></p>
+            </span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': displayMessage.socialNumber}">
+            <label for="socialNumber">Cpf</label>
+            <input type="text" class="form-control" id="socialNumber" placeholder="CPF do cliente"
+                formControlName="socialNumber">
+            <span class="text-danger" *ngIf="displayMessage.socialNumber">
+                <p [innerHtml]="displayMessage.socialNumber"></p>
+            </span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': displayMessage.email}">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" placeholder="Email do cliente"
+                formControlName="email">
+            <span class="text-danger" *ngIf="displayMessage.email">
+                <p [innerHtml]="displayMessage.email"></p>
+            </span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': displayMessage.phone}">
+            <label for="phone">Telefone</label>
+            <input type="text" class="form-control" id="phone" placeholder="Telefone do cliente"
+                formControlName="phone">
+            <span class="text-danger" *ngIf="displayMessage.phone">
+                <p [innerHtml]="displayMessage.phone"></p>
+            </span>
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+</form>

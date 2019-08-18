@@ -1,4 +1,4 @@
-import { Book } from './models/Book';
+import { Client } from './models/Client';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
@@ -9,26 +9,16 @@ import { ServiceBase } from 'src/app/services/services.base';
   providedIn: 'root'
 })
 
-export class BookService extends ServiceBase {
+export class ClientService extends ServiceBase {
   constructor(private http: HttpClient) { super() }
 
-  BookPost(book: Book): Observable<Book> {
-
+  AddClient(client: Client): Observable<Client>{
     return this.http
-      .post(this.UrlServices + 'api/Book', book, {responseType: 'text'})
+    .post(this.UrlServices + 'api/client', client, {responseType: 'text'})
       .pipe(
         map(this.extractData),
         catchError(this.serviceError)
       );
-  }
-
-  GetAll(){
-    return this.http
-      .get<Book[]>(this.UrlServices+ 'api/Book')
-      .pipe(
-        map(this.extractData),
-        catchError(this.serviceError)
-      )
   }
 }
 

@@ -2,7 +2,7 @@ import { BookService } from './../book.service';
 import { Component, OnInit, AfterViewChecked, AfterViewInit, ViewChild, ViewChildren, ElementRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControlName } from '@angular/forms';
 import { GenericValidator } from './../../../utils/generic.form.validator';
-import { Book } from './../model/Book';
+import { Book } from '../models/Book';
 import { Observable, fromEvent, merge } from 'rxjs';
 import { CustomFormsModule } from 'ng2-validation';
 import { Router } from '@angular/router';
