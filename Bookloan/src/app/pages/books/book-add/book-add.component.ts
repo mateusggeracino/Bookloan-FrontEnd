@@ -4,8 +4,8 @@ import { FormGroup, FormBuilder, Validators, FormControlName } from '@angular/fo
 import { GenericValidator } from './../../../utils/generic.form.validator';
 import { Book } from '../models/Book';
 import { Observable, fromEvent, merge } from 'rxjs';
-import { CustomFormsModule } from 'ng2-validation';
 import { Router } from '@angular/router';
+import {ToastrService} from 'ngx-toastr'
 
 @Component({
   selector: 'app-book-add',
@@ -22,11 +22,12 @@ export class BookAddComponent implements OnInit, AfterViewInit {
   validationMessages: { [key: string]: { [key: string]: string } };
   genericValidator: GenericValidator;
   displayMessage: { [key: string]: string } = {};
-  errors: string[];
+  errors: string[] = [];
 
   constructor(private fb: FormBuilder,
     private bookService: BookService,
-    private router: Router) {
+    private router: Router,
+    private toastr: ToastrService) {
 
     this.validationMessages = {
       title: {
@@ -73,14 +74,16 @@ export class BookAddComponent implements OnInit, AfterViewInit {
     this.subscribeForm.reset();
     this.errors = [];
 
-    // para adicionar o token no localstore do navegador.
-    // localStorage.setItem('bookLoan.token', response.result.access_token);
-    // localStorage.setItem('bookLoan.user', JSON.stringify(response.result.user));
-
-    this.router.navigate(['book'])
+    let toastrMessage = this.toastr.success('Livro cadastrado com sucesso.', 'Sucesso');
+    if(toastrMessage){
+      toastrMessage.onHidden.subscribe(() => {
+        this.router.navigate(['/home'])
+      });
+    }
   }
 
   onError(fail: any) {
-    this.errors = fail.error;
+    this.toastr.error('Ocorreu um erro!', 'Erro');
+    this.errors = [fail.error.title];
   }
 }

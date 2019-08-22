@@ -1,7 +1,7 @@
 <form (ngSubmit)="addBook()" [formGroup]="subscribeForm" class="mt-4 col-8 mx-auto">
     <div class="form-horizontal">
-        <div class="alert alert-danger" *ngIf="errors?.length > 0">
-            <h3 id=msgReturn>Opa! Alguma coisa não deu certo: </h3>
+        <div class="alert alert-danger" *ngIf="errors.length > 0">
+            <h3 id="msgReturn">Opa! Alguma coisa não deu certo:</h3>
             <ul>
                 <li *ngFor="let error of errors">{{ error }}</li>
             </ul>

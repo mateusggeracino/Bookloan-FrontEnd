@@ -8,8 +8,7 @@ import { Observable, fromEvent, merge  } from 'rxjs';
 
 @Component({
   selector: 'app-client-add',
-  templateUrl: './client-add.component.html',
-  styleUrls: ['./client-add.component.css']
+  templateUrl: './client-add.component.html'
 })
 export class ClientAddComponent implements OnInit, AfterViewInit  {
   

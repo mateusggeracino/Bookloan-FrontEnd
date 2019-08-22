@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { ToastrModule } from 'ngx-toastr'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,8 @@ import { BookAddComponent } from './pages/books/book-add/book-add.component';
 
 import { BookService } from './pages/books/book.service';
 import { ClientAddComponent } from './pages/clients/client-add/client-add.component';
+import { LoginComponent } from './pages/login/login.component';
+import { LoginService } from './pages/login/login.services';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ import { ClientAddComponent } from './pages/clients/client-add/client-add.compon
     ClientComponent,
     BookComponent,
     BookAddComponent,
-    ClientAddComponent
+    ClientAddComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -32,10 +37,13 @@ import { ClientAddComponent } from './pages/clients/client-add/client-add.compon
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    CustomFormsModule
+    CustomFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     BookService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })

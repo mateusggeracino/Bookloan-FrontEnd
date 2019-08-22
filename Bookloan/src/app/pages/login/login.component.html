@@ -1,0 +1,26 @@
+<form (ngSubmit)="Login()" [formGroup]="loginForm" class="mt-4 col-8 mx-auto form-login">
+    <div class="form-horizontal">
+        <div class="alert alert-danger" *ngIf="errors?.length > 0">
+            <h3 id=msgReturn>Opa! Alguma coisa não deu certo: </h3>
+            <ul>
+                <li *ngFor="let error of errors">{{ error }}</li>
+            </ul>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': displayMessage.socialNumber}">
+            <label for="socialNumber">CPF</label>
+            <input type="text" class="form-control" id="socialNumber" placeholder="Digite seu cpf" formControlName="socialNumber">
+            <span class="text-danger" *ngIf="displayMessage.socialNumber">
+                <p [innerHtml]="displayMessage.socialNumber"></p>
+            </span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': displayMessage.password}">
+            <label for="password">Senha</label>
+            <input type="password" class="form-control" id="password" placeholder="Digite sua senha" formControlName="password">
+            <span class="text-danger" *ngIf="displayMessage.password">
+                <p [innerHtml]="displayMessage.password"></p>
+            </span>
+        </div>
+        <button type="submit" class="btn btn-outline-dark w-100">Entrar</button>
+    </div>
+</form>
