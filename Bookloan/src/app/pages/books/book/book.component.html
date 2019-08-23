@@ -1,12 +1,24 @@
+<div class="input-group my-3 input-search mx-auto">
+    <input type="text" class="form-control" placeholder="Título do livro" aria-label="Recipient's username"
+        aria-describedby="basic-addon2">
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button">Pesquisar</button>
+    </div>
+</div>
 <div class="row d-flex justify-content-center">
-    <div *ngFor="let book of books" class="card m-1 card-size">
+    <div *ngFor="let book of books | paginate: { itemsPerPage: 8, currentPage: actualPage }; let i = index"
+        class="card m-1 card-size">
         <img class="card-img-top"
             src="https://timedotcom.files.wordpress.com/2015/06/521811839-copy.jpg?w=800&quality=85"
             alt="Imagem de capa do card">
         <div class="card-body">
-            <p>{{book.title}}</p>
-            <p class="card-text">{{book.author}}</p>
+            <strong>{{book.title}}</strong>
+            <p class="card-text mt-2">{{book.author}}</p>
         </div>
         <button type="submit" class="btn btn-outline-dark w-100">Reservar</button>
+    </div>
+    <div class="mx-auto my-4">
+        <pagination-controls (pageChange)="actualPage = $event" previousLabel="Anterior" nextLabel="Próximo">
+        </pagination-controls>
     </div>
 </div>

@@ -1,0 +1,13 @@
+<ul [ngSwitch]='user()' class="navbar-nav ">
+
+    <div *ngSwitchCase="false" class="form-login navbar-collapse">
+        <li><a [routerLink]="['/client-add']" class="nav-item nav-link">Registrar-se</a></li>
+        <li><a [routerLink]="['/login']" class="nav-item nav-link ml-3">Entrar</a></li>
+    </div>
+    <div *ngSwitchCase="true" class="form-logout navbar-collapse">
+        <li><a href="javascript:void(0)" class="nav-item nav-link">Olá {{ userName }}</a></li>
+        <li><a href="javascript:void(0)" class="nav-item nav-link ml-3" (click)="logout()">
+                <span class="glyphicon glyphicon-off"></span>Sair
+            </a></li>
+    </div>
+</ul>

@@ -18,7 +18,7 @@ export class ClientAddComponent implements OnInit, AfterViewInit  {
   client: Client;
   validationMessages: { [key: string]: { [key: string]: string } };
   genericValidator: GenericValidator;
-  errors: string[];
+  errors: string[] = [];
   displayMessage: {[key: string]: string} = {};
 
   constructor(private fb: FormBuilder,

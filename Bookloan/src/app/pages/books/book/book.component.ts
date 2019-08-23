@@ -10,7 +10,7 @@ import { Book } from '../models/Book';
 export class BookComponent implements OnInit {
 
   books: Array<Book>;
-
+  actualPage = 1;
   constructor(private bookService: BookService) { }
 
   ngOnInit() {
