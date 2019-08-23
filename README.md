@@ -6,11 +6,11 @@
 * Login / Logout
 * Reserva de Livros
 
-## Ferramentas/Tecnologias
+## Ferramentas/Tecnologias ↓
 * Toastr
 * Validations
 * Bootstrap 4
-
+* Paginação
 
 ## Prints do sistema ↓
 
