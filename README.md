@@ -1,5 +1,17 @@
 # Bookloan-FrondEnd
 
+## Funcionalidades ↓
+* Cadastro de Cliente
+* Cadastro de Livros
+* Login / Logout
+* Reserva de Livros
+
+## Ferramentas/Tecnologias
+* Toastr
+* Validations
+* Bootstrap 4
+
+
 ## Prints do sistema ↓
 
 * Tela inicial do sistema (Logado com um usuário chamado String)
